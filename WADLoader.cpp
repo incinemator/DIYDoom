@@ -1,4 +1,6 @@
 #include "WADLoader.h"
+#include <iostream>
+#include "WADReader.h"
 
 
 class WADLoader
