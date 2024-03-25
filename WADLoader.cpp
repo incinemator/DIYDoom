@@ -1,3 +1,6 @@
+#include "WADLoader.h"
+
+
 class WADLoader
 {
 public:
