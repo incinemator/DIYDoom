@@ -26,3 +26,6 @@ if (!m_WADFile.is_open())
     cout << "Error: Failed to open WAD file" << m_sWADFilePath << endl;
     return false;
 }
+
+m_WADFile.seekg(0, m_WADFile.end);
+size_t length = m_WADFile.tellg();
