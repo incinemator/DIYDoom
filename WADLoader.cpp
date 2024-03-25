@@ -32,8 +32,15 @@ bool WADLoader::OpenAndLoad()
     m_WADFile.seekg(0, m_WADFile.end);
     size_t length = m_WADFile.tellg();
 
-    m_WADData = new uint8_t[length]; 
+    m_WADData = new uint8_t[length];
+
+    // remember to know the file size we had to move the file pointer all the way to the end! We need to move it back to the beginning.
+    m_WADFile.seekg(ifstream::beg);
+    m_WADFile.read((char *)m_WADData, length); // read the file and place it in m_WADData
+
+    m_WADFile.close();
 }
+
 
 
 
