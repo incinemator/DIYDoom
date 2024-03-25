@@ -20,12 +20,27 @@ WADLoader::WADLoader(string sWADFilePath) : m_WADData(NULL), m_sWADFilePath(sWAD
 {
 }
 
-m_WADFile.open(m_sWADFilePath, ifstream::binary);
-if (!m_WADFile.is_open())
+bool WADLoader::OpenAndLoad()
 {
-    cout << "Error: Failed to open WAD file" << m_sWADFilePath << endl;
-    return false;
+    m_WADFile.open(m_sWADFilePath, ifstream::binary);
+    if (!m_WADFile.is_open())
+    {
+        cout << "Error: Failed to open WAD file" << m_sWADFilePath << endl;
+        return false;
+    }
+
+    m_WADFile.seekg(0, m_WADFile.end);
+    size_t length = m_WADFile.tellg();
 }
 
-m_WADFile.seekg(0, m_WADFile.end);
-size_t length = m_WADFile.tellg();
+
+
+bool WADLoader::LoadWAD()
+{
+    if (!OpenAndLoad())
+    {
+        return false;
+    }
+
+    return true;
+}
