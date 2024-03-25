@@ -2,6 +2,8 @@
 #include <iostream>
 #include "WADReader.h"
 
+using namespace std;
+
 
 class WADLoader
 {
