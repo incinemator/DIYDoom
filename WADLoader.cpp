@@ -53,3 +53,10 @@ bool WADLoader::LoadWAD()
 
     return true;
 }
+
+int main()
+{
+    WADLoader wadloader("..\\..\\..\\external\\assets\\DOOM.WAD");
+    wadloader.LoadWAD();
+    return 0;
+}
