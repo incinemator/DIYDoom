@@ -15,3 +15,7 @@ protected:
     uint8_t *m_WADData;         // let's load the file and keep it in memory! It is just a few MBs!
     std::vector<Directory> m_WADDirectories; //let's store all the directories in this vector.
 };
+
+WADLoader::WADLoader(string sWADFilePath) : m_WADData(NULL), m_sWADFilePath(sWADFilePath)
+{
+}
