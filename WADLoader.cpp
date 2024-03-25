@@ -31,6 +31,8 @@ bool WADLoader::OpenAndLoad()
 
     m_WADFile.seekg(0, m_WADFile.end);
     size_t length = m_WADFile.tellg();
+
+    m_WADData = new uint8_t[length]; 
 }
 
 
