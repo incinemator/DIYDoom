@@ -19,3 +19,10 @@ protected:
 WADLoader::WADLoader(string sWADFilePath) : m_WADData(NULL), m_sWADFilePath(sWADFilePath)
 {
 }
+
+m_WADFile.open(m_sWADFilePath, ifstream::binary);
+if (!m_WADFile.is_open())
+{
+    cout << "Error: Failed to open WAD file" << m_sWADFilePath << endl;
+    return false;
+}
